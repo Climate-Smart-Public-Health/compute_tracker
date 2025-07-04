@@ -4,8 +4,8 @@
 #SBATCH -c 2 # number of cores 
 #SBATCH --mem 5GB # memory 
 #SBATCH -t 0-00:05 # time (D-HH:MM)
-#SBATCH -o render_dashboard.%N.%j.out # STDOUT
-#SBATCH -e render_dashboard.%N.%j.err # STDERR
+#SBATCH -o job_render_dashboard.%N.%j.out # STDOUT
+#SBATCH -e job_render_dashboard.%N.%j.err # STDERR
 
 
 # Render Quarto dashboard from cron
@@ -31,7 +31,7 @@ quarto render
 if ! git diff --exit-code; then
     echo "Changes detected, committing and pushing..."
     git add .
-    git commit -m "Render dashboard on $(date)"
+    git commit -m "Re-render dashboard on $(date)"
     git push origin main    
     echo "Changes pushed to the repository."
 else

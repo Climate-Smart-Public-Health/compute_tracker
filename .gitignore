@@ -8,3 +8,4 @@ slurm*
 *.log
 *.err
 *.out
+/.quarto/
