@@ -1,0 +1,26 @@
+---
+title: "Golden Lab FASRC Compute Dashboard"
+format: 
+    dashboard:
+        scrolling: true
+---
+
+```{r}
+library(tidyverse)
+library(DT)
+```
+
+## Cluster Usage Summary
+
+The table below is updated automatically from FASRC via cron. Last updated: `r Sys.time()`
+
+```{r}
+read_delim("data.txt", col_names=TRUE, delim="|") %>%
+    select(-`...9`) -> cluster_usage
+```
+
+##
+
+```{r}
+datatable(cluster_usage)
+```

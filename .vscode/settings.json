@@ -1,0 +1,9 @@
+{
+    "r.rterm.linux": "/n/home03/ttapera/.conda/envs/compute_tracker/bin/radian",
+    "r.bracketedPaste": true,
+    "r.sessionWatcher": true,
+    "r.alwaysUseActiveTerminal": true,
+    "r.lsp.path": "/usr/local/bin/R",
+    "r.rpath.linux": "/n/sw/helmod-rocky8/apps/Core/R/4.4.3-fasrc01/bin/R",
+    "python.terminal.activateEnvInCurrentTerminal": true,
+}
