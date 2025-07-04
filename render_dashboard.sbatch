@@ -26,3 +26,14 @@ sshare --account=cgolden_lab -apmU > data.txt
 
 # Run render
 quarto render
+
+# Commit and push changes if any
+if ! git diff --exit-code; then
+    echo "Changes detected, committing and pushing..."
+    git add .
+    git commit -m "Render dashboard on $(date)"
+    git push origin main    
+    echo "Changes pushed to the repository."
+else
+    echo "No changes detected, skipping commit and push."
+fi
