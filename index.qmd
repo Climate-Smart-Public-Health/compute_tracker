@@ -12,7 +12,22 @@ library(DT)
 
 ## Cluster Usage Summary
 
-The table below is updated automatically from FASRC via cron. Last updated: `r Sys.time()`
+The table below is updated automatically from FASRC via cron. Last updated: `r now(tzone="EDT")`
+
+It is a summary of current compute usage parsed from the latest `sshare` output. The data 
+includes user, account, and resource usage statistics. The most important columns to watch
+are `EffectvUsage`, which shows the percentage of the cluster the Account has actually used,
+and Fairshare, which is a FASRC metric that determines how much of the compute resources
+are being used by a lab:
+
+> While Fairshare may seem complex and confusing, it is actually quite logical once you think about it. The scheduler needs some way to adjudicate who gets what resources. Different groups on the cluster have been granted different resources for various reasons. In order to serve the great variety of groups and needs on the cluster a method of fairly adjudicating job priority is required. This is the goal of Fairshare. Fairshare allows those users who have not fully used their resource grant to get higher priority for their jobs on the cluster, while making sure that those groups that have used more than their resource grant do not overuse the cluster. The cluster is a limited resource and Fairshare allows us to ensure everyone gets a fair opportunity to use it regardless of how big or small the group is.
+
+Source: [FASRC Docs](https://docs.rc.fas.harvard.edu/kb/fairshare/)
+
+A FairShare score close to 1 means that, compared to what we have available, we have 
+underutilized our allocation, and a score close to 0 means that we have overutilized it.
+_This means that 1 is not perfect, because while we are not using the cluster, we still have
+those resources available to us and thus, they're not being used by someone else._
 
 ```{r}
 read_delim("data.txt", col_names=TRUE, delim="|") %>%

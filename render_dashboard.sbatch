@@ -11,7 +11,7 @@
 # Render Quarto dashboard from cron
 date
 
-# Load your environment – required for R, quarto, github
+# Load your environment – required for R, quarto, github authorization
 source ~/.bashrc
 mamba activate compute_tracker
 quarto check
@@ -24,10 +24,13 @@ cd /n/holylabs/LABS/cgolden_lab/Lab/projects/compute_tracker
 # run data collection
 sshare --account=cgolden_lab -apmU > data.txt
 
-# Run render
+# Render the dashboard
 quarto render
 
 # Commit and push changes if any
+
+## git diff --exit-code is a very handy way to check if there are changes
+## to the repo. Basically, if there are changes, it will return a non-zero exit code.
 if ! git diff --exit-code; then
     echo "Changes detected, committing and pushing..."
     git add .
