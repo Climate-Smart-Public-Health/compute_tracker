@@ -1,6 +1,6 @@
 Account|User|Partition|RawShares|NormShares|RawUsage|EffectvUsage|FairShare|
-cgolden_lab|gdenicola||parent|0.000390|0|0.000011|0.980539|
-cgolden_lab|hkelahan||parent|0.000390|0|0.000011|0.980539|
-cgolden_lab|ogow||parent|0.000390|0|0.000011|0.980539|
-cgolden_lab|oturner||parent|0.000390|0|0.000011|0.980539|
-cgolden_lab|ttapera||parent|0.000390|1558905|0.000011|0.980539|
+cgolden_lab|gdenicola||parent|0.000390|0|0.000009|0.984221|
+cgolden_lab|hkelahan||parent|0.000390|0|0.000009|0.984221|
+cgolden_lab|ogow||parent|0.000390|0|0.000009|0.984221|
+cgolden_lab|oturner||parent|0.000390|0|0.000009|0.984221|
+cgolden_lab|ttapera||parent|0.000390|1237366|0.000009|0.984221|
